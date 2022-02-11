@@ -21,11 +21,11 @@ func saybao(w http.ResponseWriter, r *http.Request)  {
 	}
 
 	//渲染模板
-	//u1 :=UserInfo{
-	//	Name: "Gubao",
-	//	Gender: "Baby",
-	//	Age: 4,
-	//}
+	u1 :=UserInfo{
+		Name: "Gubao",
+		Gender: "Baby",
+		Age: 4,
+	}
 
 	m1 := map[string]interface{}{
 		"Name": "Gubao",
@@ -33,7 +33,11 @@ func saybao(w http.ResponseWriter, r *http.Request)  {
 		"Age": 5,
 	}
 
-	err = t.Execute(w,  m1)
+	err = t.Execute(w,  map[string]interface{}{
+		"u1": u1,
+		"m1":m1,
+	})
+
 	if err!= nil{
 		fmt.Println("Parse template failed, err:%v", err)
 		return
