@@ -1,21 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"github.com/gin-gonic/gin"
-	"log"
-)
+import "github.com/gin-gonic/gin"
+
+func sayhi(c *gin.Context){
+	c.JSON(200, gin.H{
+		"message": "Hi Gubao!",
+	})
+}
 
 func main() {
-	engine := gin.Default()
-	engine.GET("/hello", func(context *gin.Context) {
-		fmt.Println("url request:",context.FullPath())
-		context.Writer.Write([]byte("Hello,Gin\n"))
-		//context.JSON(200, gin.H{
-		//	"message": "pong",
-		//})
-	})
-	if err:= engine.Run(":8090");err != nil{
-		log.Fatal(err.Error())
-	}
+	r := gin.Default()
+
+	r.GET("/gubao", sayhi)
+
+	r.Run(":5555")
+
 }
