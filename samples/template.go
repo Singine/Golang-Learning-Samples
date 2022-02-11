@@ -6,9 +6,9 @@ import (
 	"net/http"
 )
 
-func sayhi(w http.ResponseWriter, r *http.Request)  {
+func saybao(w http.ResponseWriter, r *http.Request)  {
 	//解析模板
-	t,err := template.ParseFiles("./hi.tmpl")
+	t,err := template.ParseFiles("./template.tmpl")
 	if err != nil{
 		fmt.Println("Parse template failed, err:%v", err)
 		return
@@ -24,7 +24,7 @@ func sayhi(w http.ResponseWriter, r *http.Request)  {
 }
 
 func main() {
-	http.HandleFunc("/",sayhi)
+	http.HandleFunc("/",saybao)
 	err := http.ListenAndServe(":5555",nil)
 	if err!= nil{
 		fmt.Println("Http Server failed, err:%v", err)
