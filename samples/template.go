@@ -33,10 +33,23 @@ func saybao(w http.ResponseWriter, r *http.Request)  {
 		"Age": 5,
 	}
 
+	bao := []string{
+		"灰灰",
+		"药药",
+		"嘿嘿",
+		"边边",
+		"獭獭",
+		"龟龟",
+
+	}
+
 	err = t.Execute(w,  map[string]interface{}{
 		"u1": u1,
 		"m1":m1,
+		"bao":bao,
 	})
+
+
 
 	if err!= nil{
 		fmt.Println("Parse template failed, err:%v", err)

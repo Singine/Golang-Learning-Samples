@@ -8,11 +8,31 @@
     <title>Hi Gubao</title>
 </head>
 <body>
+
 <h1>Hi {{ .u1.Name }}</h1>
 <h2>Gender: {{ .u1.Gender }}</h2>
 <h3>Age: {{ .u1.Age }}</h3>
-<h1>Hello {{ .m1.Name }}</h1>
-<h2>Gender: {{ .m1.Gender }}</h2>
-<h3>Age: {{ .m1.Age }}</h3>
+
+{{ with .m1 }}
+<h1>Hello {{ .Name }}</h1>
+<h2>Gender: {{ .Gender }}</h2>
+<h3>Age: {{ .Age }}</h3>
+{{end}}
+
+<hr/>
+
+{{ $n := 1 }}
+{{ if eq $n 2 }}
+    <h3>{{ and .m1.Age $n }}</h3>
+{{ else }}
+    <h6>----------------------</h6>
+{{ end }}
+
+<hr/>
+
+{{ range $i, $bao := .bao }}
+    <p>{{ $i }} - {{ $bao }}</p>
+{{end}}
+
 </body>
 </html>
