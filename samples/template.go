@@ -14,9 +14,9 @@ type UserInfo struct {
 
 func saybao(w http.ResponseWriter, r *http.Request)  {
 	//解析模板
-	t,err := template.ParseFiles("./template.tmpl")
+	t,err := template.ParseFiles("./templates.tmpl")
 	if err != nil{
-		fmt.Println("Parse template failed, err:%v", err)
+		fmt.Println("Parse templates failed, err:%v", err)
 		return
 	}
 
@@ -52,7 +52,7 @@ func saybao(w http.ResponseWriter, r *http.Request)  {
 
 
 	if err!= nil{
-		fmt.Println("Parse template failed, err:%v", err)
+		fmt.Println("Parse templates failed, err:%v", err)
 		return
 	}
 }
