@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form-post</title>
+</head>
+<body>
+<form action="/login" method="post" novalidate autocomplete="off">
+    <div>
+        <label for="username">username:</label>
+        <input type="text" name="username" id="username">
+    </div>
+    <div>
+        <label for="password">password:</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <div>
+        <input type="submit" value="Login" >
+    </div>
+    <h3>{{ .Username }}</h3>
+    <h3>{{ .Password }}</h3>
+</form>
+</body>
+</html>
