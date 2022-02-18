@@ -8,6 +8,7 @@ import (
 
 func paramsJsonHandle(ctx *gin.Context) {
 
+	//JSON传值进来
 	// 获取request.Body() 中的数据(这里没有进行错误处理)
 	// 返回的是字节数组
 	dataBytes, _ := ctx.GetRawData()
@@ -35,6 +36,9 @@ func main() {
 
 
 	engine.POST("/login", func(context *gin.Context) {
+
+		//Form表单传值进来
+
 		//username := context.PostForm("username")
 		//password := context.PostForm("password")
 
