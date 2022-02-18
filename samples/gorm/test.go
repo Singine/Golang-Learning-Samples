@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -43,9 +44,16 @@ func main() {
 
 	//db.Debug().Create(&g)
 	//db.Debug().Find(&g)
-	//db.Find(&g, "g_name = ?", "test")
+	db.Debug().Find(&g, "g_id=?", "5")
+	fmt.Println(g)
+
+	if err := db.Debug().Find(&g, "g_id=?", "6").Error; err != nil {
+		fmt.Println(err)
+	}else{
+		fmt.Println(g)
+	}
 	//db.Model(&g).Create(&t)
 
-	db.Where("g_id=?","2").Delete(&g)
+	//db.Where("g_id=?","2").Delete(&g)
 
 }
