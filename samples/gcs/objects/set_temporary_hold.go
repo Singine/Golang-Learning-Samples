@@ -14,17 +14,18 @@
 
 package objects
 
+// [START storage_set_temporary_hold]
 import (
 	"context"
 	"fmt"
-	"google.golang.org/cloud/storage"
 	"io"
-	"os"
 	"time"
+
+	"cloud.google.com/go/storage"
 )
 
-// uploadFile uploads an object.
-func uploadFile(w io.Writer, bucket, object string) error {
+// setTemporaryHold sets TemporaryHold flag of an object to true.
+func setTemporaryHold(w io.Writer, bucket, object string) error {
 	// bucket := "bucket-name"
 	// object := "object-name"
 	ctx := context.Background()
@@ -34,24 +35,18 @@ func uploadFile(w io.Writer, bucket, object string) error {
 	}
 	defer client.Close()
 
-	// Open local file.
-	f, err := os.Open("notes.txt")
-	if err != nil {
-		return fmt.Errorf("os.Open: %v", err)
-	}
-	defer f.Close()
-
-	ctx, cancel := context.WithTimeout(ctx, time.Second*50)
+	ctx, cancel := context.WithTimeout(ctx, time.Second*10)
 	defer cancel()
 
-	// Upload an object with storage.Writer.
-	wc := client.Bucket(bucket).Object(object).NewWriter(ctx)
-	if _, err = io.Copy(wc, f); err != nil {
-		return fmt.Errorf("io.Copy: %v", err)
+	o := client.Bucket(bucket).Object(object)
+	objectAttrsToUpdate := storage.ObjectAttrsToUpdate{
+		TemporaryHold: true,
 	}
-	if err := wc.Close(); err != nil {
-		return fmt.Errorf("Writer.Close: %v", err)
+	if _, err := o.Update(ctx, objectAttrsToUpdate); err != nil {
+		return fmt.Errorf("Object(%q).Update: %v", object, err)
 	}
-	fmt.Fprintf(w, "Blob %v uploaded.\n", object)
+	fmt.Fprintf(w, "Temporary hold was enabled for %v.\n", object)
 	return nil
 }
+
+// [END storage_set_temporary_hold]
