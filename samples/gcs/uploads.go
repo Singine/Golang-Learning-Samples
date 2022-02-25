@@ -14,7 +14,7 @@ func main() {
 
 	//projectID := "gcs-gubao"
 	bucket := "gubao_bucket_test"
-	object := "咕豹豹.jpg"
+	object := "article_1.png"
 	client, err := storage.NewClient(ctx)
 	if err != nil {
 		log.Fatalf("Failed to create client: %v", err)
@@ -22,7 +22,7 @@ func main() {
 	defer client.Close()
 
 
-	f, err := os.Open("咕豹豹.jpg")
+	f, err := os.Open("C:/Users/DZH/go/Golang-Learning-Samples/samples/gcs/upload/files/article_1.png")
 	if err != nil {
 		fmt.Errorf("os.Open: %v", err)
 	}
