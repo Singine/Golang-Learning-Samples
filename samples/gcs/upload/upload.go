@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -28,7 +29,9 @@ func main()  {
 			})
 			return
 		}
+		str := strings.Split(file.Filename, ".")[1]
 		log.Println(file.Filename)
+		log.Println(str)
 		newfilename := "article_3.png"
 		dst := fmt.Sprintf("C:/Users/DZH/go/Golang-Learning-Samples/samples/gcs/upload/files/%s", newfilename)
 		// 上传文件到指定的目录
@@ -36,9 +39,9 @@ func main()  {
 		c.JSON(http.StatusOK, gin.H{
 			"message": fmt.Sprintf("'%s' uploaded!", file.Filename),
 		})
-		newfilepath := "C:/Users/DZH/go/Golang-Learning-Samples/samples/gcs/upload/files/" + newfilename
+		//newfilepath := "C:/Users/DZH/go/Golang-Learning-Samples/samples/gcs/upload/files/" + newfilename
 
-		uploadFile(newfilepath,"gubao_bucket_test",newfilename)
+		//uploadFile(newfilepath,"gubao_bucket_test",newfilename)
 	})
 
 	r.Run(":5555")
