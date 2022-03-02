@@ -27,7 +27,7 @@ func main() {
 	//	"baowo",
 	//}
 	//db.Create(&u1)
-	
+
 	//查询
 
 	var g Gift
@@ -38,8 +38,6 @@ func main() {
 	//更新
 
 	db.Model(&g).Update("Name","boboni")
-
-
 
 	//删除数据
 
