@@ -21,9 +21,7 @@ func paramsJsonHandle(ctx *gin.Context) {
 
 	// 数据返回
 	ctx.JSON(http.StatusOK, m)
-
 }
-
 
 func main() {
 	engine := gin.Default()
@@ -33,7 +31,6 @@ func main() {
 	engine.GET("/login", func(context *gin.Context) {
 		context.HTML(http.StatusOK, "form-post.html",nil)
 	})
-
 
 	engine.POST("/login", func(context *gin.Context) {
 
