@@ -27,9 +27,7 @@ func main() {
 	//	"baowo",
 	//}
 	//db.Create(&u1)
-
-
-
+	
 	//查询
 
 	var g Gift
