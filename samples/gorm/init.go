@@ -36,7 +36,6 @@ func main() {
 
 
 	//更新
-
 	db.Model(&g).Update("Name","boboni")
 
 	//删除数据
