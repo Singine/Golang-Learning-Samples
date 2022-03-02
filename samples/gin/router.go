@@ -38,7 +38,7 @@ func main() {
 		})
 	})
 
-	
+
 	//engine.GET("/video/index", func(context *gin.Context) {
 	//	context.JSON(http.StatusOK, gin.H{
 	//		"msg":"/video/index",
