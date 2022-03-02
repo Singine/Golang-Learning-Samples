@@ -43,6 +43,4 @@ func main() {
 
 	db.Delete(&g)
 
-
-
 }
