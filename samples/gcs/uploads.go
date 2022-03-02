@@ -27,7 +27,7 @@ func main() {
 		fmt.Errorf("os.Open: %v", err)
 	}
 	defer f.Close()
-	
+
 
 	wc := client.Bucket(bucket).Object(object).NewWriter(ctx)
 	if _, err = io.Copy(wc, f); err != nil {

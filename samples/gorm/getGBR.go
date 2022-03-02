@@ -70,6 +70,5 @@ func API_GetReminiscences(status bool)gin.HandlerFunc {
 			context.Abort()
 		}
 
-
 	}
 }
