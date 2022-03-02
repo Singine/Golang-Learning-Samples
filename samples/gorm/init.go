@@ -24,9 +24,6 @@ func main() {
 	//db.AutoMigrate(&Gift{})
 
 
-
-
-
 	//创建数据行
 
 	//u1 := Gift{
