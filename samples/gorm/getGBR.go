@@ -13,7 +13,6 @@ func main() {
 	r.GET("/getGBR",API_GetReminiscences(true))
 
 	r.Run(":5555")
-
 }
 
 func InitDB(table string) string{
@@ -60,7 +59,7 @@ func API_GetReminiscences(status bool)gin.HandlerFunc {
 				context.Next()
 			}
 
-			
+
 		}else{
 			context.JSON(http.StatusMethodNotAllowed,gin.H{
 				"status":http.StatusMethodNotAllowed,
