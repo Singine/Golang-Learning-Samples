@@ -19,11 +19,6 @@ func main() {
 	}
 	defer db.Close()
 
-	//创建表 自动迁移
-
-	//db.AutoMigrate(&Gift{})
-
-
 	//创建数据行
 
 	//u1 := Gift{
