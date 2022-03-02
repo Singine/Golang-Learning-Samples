@@ -59,8 +59,7 @@ func API_GetReminiscences(status bool)gin.HandlerFunc {
 				})
 				context.Next()
 			}
-
-
+			
 		}else{
 			context.JSON(http.StatusMethodNotAllowed,gin.H{
 				"status":http.StatusMethodNotAllowed,
