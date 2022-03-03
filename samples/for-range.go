@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main(){
-
 	//for [condition |  ( init; condition; increment ) | Range]{
 	//	statement(s);
 	//}
