@@ -32,10 +32,8 @@ func main() {
 	engine.POST("/login", func(context *gin.Context) {
 
 		//Form表单传值进来
-
 		//username := context.PostForm("username")
 		//password := context.PostForm("password")
-
 		//username := context.DefaultPostForm("username","nobody")
 		//password := context.DefaultPostForm("password","nullpassword")
 
