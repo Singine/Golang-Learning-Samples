@@ -21,7 +21,6 @@ func main() {
 	}
 	defer client.Close()
 
-
 	f, err := os.Open("C:/Users/DZH/go/Golang-Learning-Samples/samples/gcs/upload/files/article_1.png")
 	if err != nil {
 		fmt.Errorf("os.Open: %v", err)
