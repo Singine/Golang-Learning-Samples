@@ -25,7 +25,6 @@ func (phone Phone) orderInfo() string{
 }
 
 
-
 type FreeGift struct {
 	name string
 	quantity int
