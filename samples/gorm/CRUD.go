@@ -21,7 +21,6 @@ func main() {
 	defer db.Close()
 
 	//把模型和数据库里的表对应起来
-
 	db.AutoMigrate(&Giftlist{})
 
 	g := Giftlist{
