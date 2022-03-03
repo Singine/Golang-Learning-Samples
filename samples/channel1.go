@@ -18,7 +18,6 @@ func main() {
 	pipline := make(chan int, 10)
 
 	go fibonacci(pipline)
-
 	for k := range pipline {
 		fmt.Println(k)
 	}
