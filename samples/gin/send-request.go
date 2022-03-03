@@ -32,7 +32,6 @@ func main() {
 	}
 	body, _ := ioutil.ReadAll(response.Body)
 
-
 	var _IPLocation IPLocation
 	if err = json.Unmarshal(body, &_IPLocation); err != nil {
 		fmt.Printf("Unmarshal err, %v\n", err)
@@ -40,5 +39,4 @@ func main() {
 	}
 
 	fmt.Println(_IPLocation)
-
 }
