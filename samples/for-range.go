@@ -13,7 +13,6 @@ func main(){
 	//3. 接一个 range 表达式 range后可接数组、切片，字符串等
 	//4. 不接表达式 => 无限循环
 
-
 	for i, l := range "go" {
 		k := "dabei"
 		fmt.Printf("%s,chishi\n",k)
