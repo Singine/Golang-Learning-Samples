@@ -19,8 +19,6 @@ func (Postgiftlsit) TableName() string {
 }
 
 
-
-
 func main() {
 	db, err := gorm.Open("mysql", "root:Haishigugue33@(localhost:3306)/gubao_gift?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
