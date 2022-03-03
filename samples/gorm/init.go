@@ -33,8 +33,7 @@ func main() {
 	var g Gift
 	db.First(&g)  //查询第一条数据到g
 	fmt.Printf("%v\n",g)
-
-
+	
 	//更新
 	db.Model(&g).Update("Name","boboni")
 
