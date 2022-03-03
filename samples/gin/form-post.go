@@ -47,7 +47,6 @@ func main() {
 		if !ok {
 			username = "nullpassword"
 		}
-		
 
 		context.HTML(http.StatusOK,"form-post.html",gin.H{
 			"Username":username,
