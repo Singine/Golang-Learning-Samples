@@ -27,5 +27,4 @@ func main() {
 	fmt.Printf("%T",a)
 	fmt.Println()
 
-
 }
