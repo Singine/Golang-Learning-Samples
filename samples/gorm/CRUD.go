@@ -31,5 +31,4 @@ func main() {
 	//db.NewRecord(&g) //判断主键是否为空
 
 	db.Debug().Create(&g)
-
 }
