@@ -52,7 +52,6 @@ func m2(context *gin.Context)  {
 	fmt.Println("m2 out............")
 }
 
-
 func authChecking(checking bool)gin.HandlerFunc {
 	//连接数据库
 	//其他工作
@@ -66,7 +65,6 @@ func authChecking(checking bool)gin.HandlerFunc {
 		}else{
 			context.Next()
 		}
-
 	}
 }
 
@@ -95,6 +93,6 @@ func main() {
 	//	demoGroup2.GET("/3", func(context *gin.Context) {})
 	//}
 
-	
+
 	engine.Run(":5555")
 }
